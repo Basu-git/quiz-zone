@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Zone - Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="quiz">
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html"><span class="logo-mark">Q</span> Quiz Zone</a>
+      <nav class="nav-links"><a href="index.html">Home</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Loading / error -->
+    <div id="loadingView" class="center"><div class="spinner"></div>Loading quiz…</div>
+    <div id="errorView" class="error-box" hidden>
+      <p id="errorText"></p><br>
+      <a class="btn ghost" href="index.html">Back to Home</a>
+    </div>
+
+    <!-- 1. Instructions -->
+    <section id="introView" class="panel intro" hidden>
+      <span class="pill" id="introCategory"></span>
+      <h1 id="introTitle"></h1>
+      <p class="section-sub" id="introDesc"></p>
+      <div class="facts">
+        <div class="fact"><b id="introCount">0</b><small>Questions</small></div>
+        <div class="fact"><b id="introTime">0</b><small>Minutes</small></div>
+        <div class="fact"><b id="introDiff"></b><small>Difficulty</small></div>
+      </div>
+      <ul class="rules">
+        <li>Each question has four options. Choose one answer.</li>
+        <li>Use Previous and Next to move between questions. You can change answers any time.</li>
+        <li>The quiz submits automatically when the timer reaches zero.</li>
+        <li>Unanswered questions count as incorrect. You need 60% to pass.</li>
+      </ul>
+      <button class="btn" id="startBtn">Start quiz</button>
+      <a class="btn ghost" href="index.html">Back to Home</a>
+    </section>
+
+    <!-- 2. Quiz -->
+    <section id="quizView" class="panel" hidden>
+      <div class="topbar">
+        <span class="qcount" id="qCount"></span>
+        <span class="timer" id="timer" role="timer">00:00</span>
+      </div>
+      <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+      <h2 class="question" id="qText"></h2>
+      <div class="options" id="options" role="radiogroup"></div>
+      <div class="nav-row">
+        <button class="btn ghost" id="prevBtn">Previous</button>
+        <div class="right">
+          <button class="btn" id="nextBtn">Next</button>
+          <button class="btn" id="submitBtn">Submit quiz</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Results (same page) -->
+    <section id="resultView" class="panel" hidden>
+      <div class="result-head">
+        <div class="ring" id="ring"><div id="ringText">0%</div></div>
+        <div>
+          <span class="status" id="status"></span>
+          <h1 id="resultTitle"></h1>
+          <p class="section-sub" id="resultTime"></p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="rTotal">0</b><small>Total questions</small></div>
+        <div class="stat good"><b id="rCorrect">0</b><small>Correct</small></div>
+        <div class="stat bad"><b id="rWrong">0</b><small>Incorrect</small></div>
+        <div class="stat"><b id="rPct">0%</b><small>Score</small></div>
+      </div>
+      <h2 class="section-title">Answer review</h2>
+      <div class="review" id="review"></div>
+      <div class="nav-row">
+        <button class="btn" id="retakeBtn">Retake quiz</button>
+        <a class="btn ghost" href="index.html">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

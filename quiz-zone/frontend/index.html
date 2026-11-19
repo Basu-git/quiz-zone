@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Zone - Challenge Your Knowledge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html"><span class="logo-mark">Q</span> Quiz Zone</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#quizzes">Quizzes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Challenge Your <span>Knowledge</span></h1>
+        <p>Quiz Zone is an online multiple-choice quiz platform. Pick a topic, beat the timer, and see your score and the correct answers instantly.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#quizzes">Browse quizzes</a>
+          <span class="pill"><b id="totalQuizzes">–</b> quizzes available</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="quizzes">
+      <div class="container">
+        <h2 class="section-title">Choose a quiz</h2>
+        <p class="section-sub">Each quiz is timed. Pass mark is 60%.</p>
+        <div class="grid" id="quizGrid" aria-live="polite">
+          <p class="section-sub">Loading quizzes…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">Quiz Zone · College project demo</footer>
+  <script src="script.js"></script>
+</body>
+</html>
